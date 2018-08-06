@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import NavLeft from './components/NavLeft';
 import './style/common.less'
+import Header from './components/Header';
 
 export default class Admin extends React.Component {
     render() {
@@ -12,6 +13,7 @@ export default class Admin extends React.Component {
                         <NavLeft/>
                     </Col>
                     <Col span={20} className="main">
+                        <Header/>
                         <Row className="content">
                             {this.props.children}
                         </Row>
