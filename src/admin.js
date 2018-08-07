@@ -8,7 +8,7 @@ export default class Admin extends React.Component {
     render() {
         return (
             <div>
-                <Row>
+                < Row className = "container" >
                     <Col span={4} className="nav-left">
                         <NavLeft/>
                     </Col>

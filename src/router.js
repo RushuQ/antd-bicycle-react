@@ -14,6 +14,11 @@ import {
 } from "react-router-dom";
 import App from './App'
 import Admin from './admin';
+import Home from './pages/home'
+import Buttons from './ui/button'
+import Modals from './ui/modals'
+import Loading from './ui/loading'
+import Notification from './ui/notification'
 
 export default class ERouter extends React.Component {
     render() {
@@ -22,7 +27,13 @@ export default class ERouter extends React.Component {
                 <App>
                     <Switch>
                         <Route path='/' render={() => (
-                            <Admin></Admin>
+                            <Admin>
+                                <Switch>
+                                    <Route path='/home' component={Home}/>
+                                    <Route path='/ui/buttons' component={Buttons}/>
+                                    <Route path='/ui/modals' component={Modals}/>
+                                </Switch>
+                            </Admin>
                         )}>
                         </Route>
                     </Switch>
