@@ -15,10 +15,10 @@ import {
 import App from './App'
 import Admin from './admin';
 import Home from './pages/home'
-import Buttons from './ui/button'
-import Modals from './ui/modals'
-import Loading from './ui/loading'
-import Notification from './ui/notification'
+import Buttons from './pages/ui/button'
+import Modals from './pages/ui/modals'
+import Loading from './pages/ui/loading'
+import Notification from './pages/ui/notification'
 
 export default class ERouter extends React.Component {
     render() {
