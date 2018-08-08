@@ -10,7 +10,8 @@ import React from "react";
 import {
     HashRouter,
     Switch,
-    Route
+    Route,
+    Redirect
 } from "react-router-dom";
 import App from './App'
 import Admin from './admin';
@@ -23,6 +24,8 @@ import Notification from './pages/ui/notification'
 import Carousels from './pages/ui/carousel'
 import Gallery from './pages/ui/gallery'
 import Tabs from './pages/ui/tabs'
+import Login from './pages/form/login'
+import Register from './pages/form/register'
 
 export default class ERouter extends React.Component {
     render() {
@@ -30,21 +33,25 @@ export default class ERouter extends React.Component {
             <HashRouter>
                 <App>
                     <Switch>
-                        <Route path='/' render={() => (
+                        <Route path='/' render={() => 
                             <Admin>
                                 <Switch>
-                                    <Route path='/home' component={Home}/>
-                                    <Route path='/ui/buttons' component={Buttons}/>
-                                    <Route path='/ui/loadings' component={Loading}/>
-                                    <Route path='/ui/modals' component={Modals}/>
-                                    <Route path='/ui/messages' component={Messages}/>
-                                    <Route path='/ui/notification' component={Notification}/>
-                                    <Route path='/ui/carousels' component={Carousels}/>
-                                    <Route path='/ui/gallery' component={Gallery}/>
-                                    <Route path='/ui/tabs' component={Tabs}/> 
-                                </Switch>
+                                    <Route path='/home' component={Home} />
+                                    <Route path='/ui/buttons' component={Buttons} />
+                                    <Route path='/ui/loadings' component={Loading} />
+                                    <Route path='/ui/modals' component={Modals} />
+                                    <Route path='/ui/messages' component={Messages} />
+                                    <Route path='/ui/notification' component={Notification} />
+                                    <Route path='/ui/carousels' component={Carousels} />
+                                    <Route path='/ui/gallery' component={Gallery} />
+                                    <Route path='/ui/tabs' component={Tabs} />
+                                    <Route path='/form/login' component={Login} /> 
+                                    <Route path='/form/reg' component={Register} /> 
+
+                                    <Redirect to='/home'/>
+                                </Switch> 
                             </Admin>
-                        )}>
+                        }>
                         </Route>
                     </Switch>
                 </App>
