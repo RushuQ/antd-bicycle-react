@@ -15,25 +15,28 @@ class FormRegister extends React.Component{
         message.success(`${userInfo.userName} 恭喜你，您通过本次表单组件学习，当前密码为：${userInfo.userPwd}`)
     }
 
-    getBase64 = (img, callback)=>{
+    getBase64 = (img, callback) => {
         const reader = new FileReader();
         reader.addEventListener('load', () => callback(reader.result));
         reader.readAsDataURL(img);
     }
 
-    handleChange = (info) => {
-        if (info.file.status === 'uploading') {
-            this.setState({ loading: true });
-            return;
-        }
-        if (info.file.status === 'done') {
-            // Get this url from response in real world.
-            this.getBase64(info.file.originFileObj, imageUrl => this.setState({
-                userImg:imageUrl,
-                loading: false,
-            }));
-        }
-    }
+     handleChange = (info) => {
+         if (info.file.status === 'uploading') {
+             this.setState({
+                 loading: true
+             });
+             return;
+         }
+         console.log(info)
+         if (info.file.status === 'done') {
+             // Get this url from response in real world.
+             this.getBase64(info.file.originFileObj, imageUrl => this.setState({
+                 imageUrl,
+                 loading: false,
+             }));
+         }
+     }
 
     render(){
         const { getFieldDecorator } = this.props.form;
@@ -187,7 +190,7 @@ class FormRegister extends React.Component{
                                     <Upload
                                         listType="picture-card"
                                         showUploadList={false}
-                                        action="//jsonplaceholder.typicode.com/posts/"
+                                        action = "//jsonplaceholder.typicode.com/posts/"
                                         onChange={this.handleChange}
                                     >
                                     {this.state.userImg?<img src={this.state.userImg}/>:<Icon type="plus"/>}
