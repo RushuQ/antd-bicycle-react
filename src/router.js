@@ -18,7 +18,11 @@ import Home from './pages/home'
 import Buttons from './pages/ui/button'
 import Modals from './pages/ui/modals'
 import Loading from './pages/ui/loading'
-import Notification from './pages/ui/notification'
+import Messages from './pages/ui/messages'
+import Notification from './pages/ui/notification'  
+import Carousels from './pages/ui/carousel'
+import Gallery from './pages/ui/gallery'
+import Tabs from './pages/ui/tabs'
 
 export default class ERouter extends React.Component {
     render() {
@@ -31,7 +35,13 @@ export default class ERouter extends React.Component {
                                 <Switch>
                                     <Route path='/home' component={Home}/>
                                     <Route path='/ui/buttons' component={Buttons}/>
+                                    <Route path='/ui/loadings' component={Loading}/>
                                     <Route path='/ui/modals' component={Modals}/>
+                                    <Route path='/ui/messages' component={Messages}/>
+                                    <Route path='/ui/notification' component={Notification}/>
+                                    <Route path='/ui/carousels' component={Carousels}/>
+                                    <Route path='/ui/gallery' component={Gallery}/>
+                                    <Route path='/ui/tabs' component={Tabs}/> 
                                 </Switch>
                             </Admin>
                         )}>
